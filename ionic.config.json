@@ -1,0 +1,7 @@
+{
+  "name": "store-app-mobile",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
