@@ -1,0 +1,98 @@
+.container {
+  // background: #E75D2F;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  justify-content: center;
+  background-image: radial-gradient(#8b868673 0.5px, #e5e5f700 0.5px);
+  background-size: 10px 10px;
+}
+
+.contForm {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.form-group {
+  position: relative;
+  margin-top: 20px;
+}
+
+.form-group input {
+  width: 100%;
+  background: none;
+  font-size: .8rem;
+  padding: .8em .3em;
+  border: none;
+  outline: none;
+  border: 1px solid #cdcdcd;
+  border-radius: 5px;
+}
+
+.form-group input:focus + label,
+.form-group input:not(:placeholder-shown) + label {
+  transform: translateY(-6px) scale(.7);
+  transform-origin: left top;
+}
+
+.form-group label {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  left: 5px;
+  transform: translateY(10px);
+  transition: transform .5s, #00ffff .3s;
+  transition: .3s ease all;
+}
+
+.contBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.btnAuth {
+  width: auto;
+  border-radius: 20px;
+  padding: 8px 30px;
+  font-size: 1rem;
+  background: var(--color-primary);
+  transition: .3s ease all;
+  background: #148a9a;
+  color: #fff;
+}
+
+.btnAuth:hover {
+  background: var(--hover-primary);
+}
+
+.options {
+  width: 100%;
+  margin-top: 40px;
+  font-size: .7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.textCount {
+  margin: 0;
+  margin-top: 15px;
+  text-align: center;
+}
+
+.redirectText {
+  color: #5192c4;
+  cursor: pointer;
+}
+
+.redirectText:hover {
+  text-decoration: underline;
+}

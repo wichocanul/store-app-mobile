@@ -24,3 +24,27 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+@font-face {
+  font-family: font-title;
+  src: url(assets/fonts/Montserrat-VariableFont_wght.ttf);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+  outline: 0;
+  border: 0;
+  white-space: nowrap;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: font-title;
+  font-weight: bold;
+}
+
+p {
+  font-family: font-title;
+}
