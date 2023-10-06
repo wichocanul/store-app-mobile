@@ -7,6 +7,10 @@ const routes: Routes = [
     path: '',
     component: MainStorePage,
     children: [
+      {
+        path: 'home',
+        component: MainStorePage
+      },
     ],
   }
 ];
