@@ -5,6 +5,8 @@ import { ClientAppRoutingModule } from './client-app-routing.module';
 import { MainStorePage } from './main-store/main-store.page';
 import { IonicModule } from '@ionic/angular';
 import { SharedModule } from '../shared/shared.module';
+import { HomePageModule } from './home/home.module';
+import { RouterModule } from '@angular/router';
 
 
 @NgModule({
@@ -15,8 +17,10 @@ import { SharedModule } from '../shared/shared.module';
     CommonModule,
     ClientAppRoutingModule,
     IonicModule,
+    RouterModule,
 
-    SharedModule
+    SharedModule,
+    HomePageModule
   ]
 })
 export class ClientAppModule { }

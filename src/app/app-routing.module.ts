@@ -18,6 +18,10 @@ const routes: Routes = [
   {
     path: '**',
     redirectTo: '/store'
+  },
+  {
+    path: 'home',
+    loadChildren: () => import('./clientApp/pages/home/home.module').then( m => m.HomePageModule)
   }
 ];
 

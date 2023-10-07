@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { MainStorePage } from './main-store/main-store.page';
+import { HomeMainPage } from './home/home-main/home-main.page';
 
 const routes: Routes = [
   {
@@ -8,9 +9,17 @@ const routes: Routes = [
     component: MainStorePage,
     children: [
       {
-        path: 'home',
-        component: MainStorePage
+        path: '',
+        component: HomeMainPage
       },
+      {
+        path: 'home',
+        component: HomeMainPage
+      },
+      {
+        path: 'shopping-cart',
+        component: HomeMainPage
+      }
     ],
   }
 ];
