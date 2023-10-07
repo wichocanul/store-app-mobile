@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { IonicModule } from '@ionic/angular';
 import { HomeMainPage } from './home-main/home-main.page';
 import { SliderHomeComponent } from './slider-home/slider-home.component';
+import { SectionProductsComponent } from './section-products/section-products.component';
+import { ComponentsModule } from '../../components/components.module';
 
 
 
@@ -13,10 +15,12 @@ import { SliderHomeComponent } from './slider-home/slider-home.component';
     CommonModule,
     FormsModule,
     IonicModule,
+    ComponentsModule,
   ],
   declarations: [
     HomeMainPage,
-    SliderHomeComponent
+    SliderHomeComponent,
+    SectionProductsComponent
   ],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })

@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="introduction">
+    <h4>{{ title | uppercase }}</h4>
+    <p class="showMore">Mostrar mas...</p>
+  </div>
+  <div #asContainerCards class="contSection">
+    <button class="btnLeft" (click)="moveLeft()"><</button>
+    <button class="btnRight" (click)="moveRight()">></button>
+
+    <app-target-scroll></app-target-scroll>
+    <app-target-scroll></app-target-scroll>
+    <app-target-scroll></app-target-scroll>
+    <app-target-scroll></app-target-scroll>
+    <app-target-scroll></app-target-scroll>
+    <app-target-scroll></app-target-scroll>
+    <app-target-scroll></app-target-scroll>
+    <app-target-scroll></app-target-scroll>
+  </div>
+</div>

@@ -1,0 +1,86 @@
+.container {
+  margin-top: 10px;
+  position: relative;
+  margin-bottom: 10px;
+  padding: 0 20px;
+}
+
+.introduction {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  margin-bottom: 5px;
+}
+
+.introduction h4 {
+  padding: 0;
+  margin: 5px 0;
+}
+
+.introduction .showMore {
+  color: #4f4f4f;
+  cursor: pointer;
+  transition: 0.2s ease all;
+}
+
+.introduction .showMore:hover {
+  color: var(--color-primary);
+}
+
+.contSection {
+  width: 100%;
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 5px;
+  margin-bottom: 30px;
+  vertical-align: top;
+  flex-wrap: nowrap;
+  scroll-behavior: smooth;
+}
+
+.contSection::-webkit-scrollbar {
+  display: none;
+}
+
+.btnRight {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: #ffffff76;
+  line-height: 40px;
+  font-size: 1rem;
+  color: #00000082;
+  transition: 0.2s ease all;
+}
+
+.btnRight:hover {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.btnLeft {
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  cursor: pointer;
+  background: #ffffff76;
+  line-height: 40px;
+  font-size: 1rem;
+  color: #00000082;
+  transition: 0.2s ease all;
+}
+
+.btnLeft:hover {
+  background: var(--color-primary);
+  color: #fff;
+}

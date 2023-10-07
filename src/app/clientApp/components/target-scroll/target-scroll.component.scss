@@ -1,0 +1,67 @@
+.target {
+  flex-direction: 0 0 auto;
+  width: 110px;
+  min-width: 110px;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: -2px 2px 4px #a5a5a5;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.target .imgProduct {
+  width: 100%;
+  height: 100px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+}
+
+.target .imgProduct img {
+  height: 100%;
+  max-width: 110px;
+}
+
+.dataProduct {
+  padding: 5px;
+}
+
+.dataProduct .title {
+  width: 100%;
+  height: auto;
+  max-height: 50px;
+  font-size: .6rem;
+  color: #a5a5a5;
+  overflow: hidden;
+  margin-bottom: 3px;
+}
+
+.dataProduct p.underlined {
+  text-decoration: line-through;
+  color: #21c061;
+  font-size: .6rem;
+}
+
+.dataProduct h5 {
+  margin: 3px 0 1px 0;
+  padding: 0;
+  font-size: .8rem;
+}
+
+.dataProduct span {
+  font-size: .5rem;
+  color: #000;
+  width: auto;
+  background: #21c061;
+  padding: 3px;
+  border-radius: 5px;
+}
+
+.dataProduct .shipment {
+  color: #21c061;
+  text-align: center;
+  margin-top: 7px;
+  font-size: .6rem;
+}
