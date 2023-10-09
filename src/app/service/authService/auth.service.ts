@@ -19,15 +19,33 @@ export class AuthService {
     return this.http.post<LoginResponse>(url, body).pipe(
       tap((resp) => {
         if (resp.message == 'success') {
-          // TODO: Save modules for user
-          localStorage.setItem('userType', resp.data.userType);
-          localStorage.setItem('email', resp.data.email);
-          localStorage.setItem('user', resp.data.user);
-          localStorage.setItem('token', resp.access_token);
+          this.LocalStorageSaveData(resp);
         }
       }),
       map((valid) => valid.message),
       catchError((err) => of(err.error.message))
     );
+  }
+
+  register(email: string, user: string, password: string) {
+    const url = `${this.baseUrl}/register-user`;
+    const body = {email, user, password};
+
+    return this.http.post<LoginResponse>(url, body).pipe(
+      tap((resp) => {
+        if(resp.message === 'success') {
+          this.LocalStorageSaveData(resp);
+        }
+      }),
+      map((valid) => valid.message),
+      catchError((err) => of(err.error.message))
+    )
+  }
+
+  LocalStorageSaveData(respData: LoginResponse) {
+    localStorage.setItem('userType', respData.data.userType);
+    localStorage.setItem('email', respData.data.email);
+    localStorage.setItem('user', respData.data.user);
+    localStorage.setItem('token', respData.access_token);
   }
 }

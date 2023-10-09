@@ -4,13 +4,18 @@
   </div>
 
   <div class="contForm">
-
-    <form class="formContainer">
+    <form
+      class="formContainer"
+      autocomplete="off"
+      [formGroup]="registerForm"
+      (ngSubmit)="register()"
+    >
       <div class="form-group">
         <input
           type="email"
           id="email"
           class="form-input md-light"
+          formControlName="email"
           placeholder=" "
         />
         <label for="email" class="form-label">Email:</label>
@@ -22,6 +27,7 @@
           type="text"
           id="user"
           class="form-input md-light"
+          formControlName="user"
           placeholder=" "
         />
         <label for="user" class="form-label">Usuario:</label>
@@ -33,6 +39,7 @@
           type="password"
           id="password"
           class="form-input md-light"
+          formControlName="password"
           placeholder=" "
         />
         <label for="password" class="form-label">Contraseña:</label>
@@ -40,13 +47,15 @@
       </div>
 
       <div class="contBtn">
-        <button type="submit" class="btnAuth">Login</button>
+        <button type="submit" class="btnAuth">Registrar</button>
       </div>
     </form>
-
   </div>
 
   <div class="options">
-    <p>Ya tengo cuenta. <span (click)="login()" class="redirectText">Iniciar sesion</span></p>
+    <p>
+      Ya tengo cuenta.
+      <span (click)="login()" class="redirectText">Iniciar sesion</span>
+    </p>
   </div>
 </div>
