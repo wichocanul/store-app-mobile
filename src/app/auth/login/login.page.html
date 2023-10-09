@@ -4,12 +4,18 @@
   </div>
 
   <div class="contForm">
-    <form class="formContainer">
+    <form
+      class="formContainer"
+      autocomplete="off"
+      [formGroup]="loginForm"
+      (ngSubmit)="login()"
+    >
       <div class="form-group">
         <input
           type="email"
           id="email"
           class="form-input md-light"
+          formControlName="email"
           placeholder=" "
         />
         <label for="email" class="form-label">Email:</label>
@@ -21,6 +27,7 @@
           type="password"
           id="password"
           class="form-input md-light"
+          formControlName="password"
           placeholder=" "
         />
         <label for="password" class="form-label">Contraseña:</label>

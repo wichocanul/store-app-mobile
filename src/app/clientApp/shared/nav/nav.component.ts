@@ -25,6 +25,10 @@ export class NavComponent implements OnInit {
 
   ngOnInit() {}
 
+  login() {
+    this.router.navigate(['/auth']);
+  }
+
   redirect(url: string) {
     this.menuController.close();
     this.router.navigate([`store/${url}`]);
