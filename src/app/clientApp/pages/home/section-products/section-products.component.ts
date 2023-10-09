@@ -1,4 +1,6 @@
 import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { ProductData } from 'src/app/interfaces/product-interface';
+import { ProductsService } from 'src/app/service/productsService/products.service';
 
 @Component({
   selector: 'app-section-products',
@@ -6,14 +8,30 @@ import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
   styleUrls: ['./section-products.component.scss'],
 })
 export class SectionProductsComponent  implements OnInit {
+  productsSection: ProductData[] = [];
+  product: ProductData = {'id': 0, 'name': '', 'description': '', 'price': '', 'stock': 0, 'image': [''], 'sku': '', 'category_id': ''}
 
   @Input() title: string = '';
+  @Input() category: string = '';
 
   @ViewChild('asContainerCards') containerCards!: ElementRef;
 
-  constructor() { }
+  constructor(private productsService: ProductsService) { }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getProducts();
+  }
+
+  getProducts() {
+    this.productsService.searchCategory(this.category).subscribe({
+      next: (resp) => {
+        this.productsSection = resp.data;
+      },
+      error: (err) => {
+        console.log(err)
+      }
+    })
+  }
 
   moveLeft() {
     let scrollElement = this.containerCards.nativeElement;

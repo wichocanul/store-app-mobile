@@ -3,10 +3,12 @@
     <img src="assets/img/products/iphone.webp" alt="">
   </div>
   <div class="dataProduct">
-    <p class="title">Apple iPhone 13 (128 GB) - Azul - Distribuidor autorizado</p>
-    <p class="underlined">$20,999</p>
-    <h5>$ 15,499</h5>
-    <span>26% OFF</span>
-    <p class="shipment">Envio Gratis</p>
+    <p class="title">{{title}}</p>
+    <div class="contentOff">
+      <p class="underlined">{{ price }}</p>
+      <span [ngClass]="{'disabled': statusPriceOff}">{{ priceOff }}% OFF</span>
+    </div>
+    <h5>$ {{ finalPrice }}</h5>
+    <p class="shipment">{{shipmentStatus}}</p>
   </div>
 </div>

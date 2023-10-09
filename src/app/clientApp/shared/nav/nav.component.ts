@@ -8,6 +8,7 @@ import {
 } from '@angular/core';
 import { Router } from '@angular/router';
 import { MenuController } from '@ionic/angular';
+import { AuthService } from 'src/app/service/authService/auth.service';
 
 @Component({
   selector: 'app-nav',
@@ -15,17 +16,22 @@ import { MenuController } from '@ionic/angular';
   styleUrls: ['./nav.component.scss'],
 })
 export class NavComponent implements OnInit {
+  userActive: boolean = false;
+
   @ViewChildren('asBtnContainer') btnContainer!: QueryList<ElementRef>;
 
   constructor(
     private router: Router,
     private menuController: MenuController,
+    private authService: AuthService,
     private renderer: Renderer2
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.userActive = this.authService.statusSesion();
+  }
 
-  login() {
+  auth() {
     this.router.navigate(['/auth']);
   }
 
@@ -35,6 +41,7 @@ export class NavComponent implements OnInit {
   }
 
   setActiveClass() {
+    this.userActive = this.authService.statusSesion();
     const currentUrl = this.removeStore(this.router.url);
 
     if (currentUrl == '') {

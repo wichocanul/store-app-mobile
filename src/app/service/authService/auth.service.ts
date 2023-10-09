@@ -29,17 +29,17 @@ export class AuthService {
 
   register(email: string, user: string, password: string) {
     const url = `${this.baseUrl}/register-user`;
-    const body = {email, user, password};
+    const body = { email, user, password };
 
     return this.http.post<LoginResponse>(url, body).pipe(
       tap((resp) => {
-        if(resp.message === 'success') {
+        if (resp.message === 'success') {
           this.LocalStorageSaveData(resp);
         }
       }),
       map((valid) => valid.message),
       catchError((err) => of(err.error.message))
-    )
+    );
   }
 
   LocalStorageSaveData(respData: LoginResponse) {
@@ -47,5 +47,13 @@ export class AuthService {
     localStorage.setItem('email', respData.data.email);
     localStorage.setItem('user', respData.data.user);
     localStorage.setItem('token', respData.access_token);
+  }
+
+  statusSesion(): boolean {
+    if (localStorage.getItem('token')) {
+      return true;
+    } else {
+      return false;
+    }
   }
 }

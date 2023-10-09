@@ -7,13 +7,9 @@
     <button class="btnLeft" (click)="moveLeft()"><</button>
     <button class="btnRight" (click)="moveRight()">></button>
 
-    <app-target-scroll></app-target-scroll>
-    <app-target-scroll></app-target-scroll>
-    <app-target-scroll></app-target-scroll>
-    <app-target-scroll></app-target-scroll>
-    <app-target-scroll></app-target-scroll>
-    <app-target-scroll></app-target-scroll>
-    <app-target-scroll></app-target-scroll>
-    <app-target-scroll></app-target-scroll>
+    <app-target-scroll
+      *ngFor="let product of productsSection"
+      [product]="product"
+    ></app-target-scroll>
   </div>
 </div>

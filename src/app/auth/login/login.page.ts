@@ -21,7 +21,9 @@ export class LoginPage implements OnInit {
               private alertController: AlertController
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    localStorage.clear();
+  }
 
   async login() {
     const { email, password } = this.loginForm.value;
