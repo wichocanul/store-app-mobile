@@ -17,8 +17,7 @@ import { AuthService } from 'src/app/service/authService/auth.service';
 })
 export class NavComponent implements OnInit {
   userActive: boolean = false;
-
-  @ViewChildren('asBtnContainer') btnContainer!: QueryList<ElementRef>;
+  user: string = '';
 
   constructor(
     private router: Router,
@@ -29,51 +28,16 @@ export class NavComponent implements OnInit {
 
   ngOnInit() {
     this.userActive = this.authService.statusSesion();
+    localStorage.getItem('user') ? this.user = localStorage.getItem('user')! : this.user = '';
+    this.menuController.close();
   }
 
   auth() {
     this.router.navigate(['/auth']);
+    this.closeTab();
   }
 
-  redirect(url: string) {
+  closeTab() {
     this.menuController.close();
-    this.router.navigate([`store/${url}`]);
-  }
-
-  setActiveClass() {
-    this.userActive = this.authService.statusSesion();
-    const currentUrl = this.removeStore(this.router.url);
-
-    if (currentUrl == '') {
-      this.renderer.addClass(this.btnContainer.get(0)?.nativeElement, 'active');
-    } else {
-      this.addClass(currentUrl);
-    }
-  }
-
-  addClass(text: string) {
-    for (let i = 0; i < this.btnContainer.length; i++) {
-      this.renderer.removeClass(
-        this.btnContainer.get(i)?.nativeElement,
-        'active'
-      );
-    }
-
-    for (let i = 0; i < this.btnContainer.length; i++) {
-      if (this.btnContainer.get(i)?.nativeElement.getAttribute('url') == text) {
-        this.renderer.addClass(
-          this.btnContainer.get(i)?.nativeElement,
-          'active'
-        );
-      }
-    }
-  }
-
-  removeStore(text: string): string {
-    if (text.length >= 7) {
-      return text.slice(7);
-    } else {
-      return '';
-    }
   }
 }

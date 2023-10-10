@@ -1,3 +1,7 @@
+.containerSearch {
+  position: relative;
+}
+
 .contInput {
   width: 100%;
   height: 30px;
@@ -5,12 +9,14 @@
   position: relative;
   border-radius: 5px;
   overflow: hidden;
+  z-index: 101;
 }
 
 input {
   width: 100%;
   padding: 0;
   margin: 0;
+  border-radius: 5px;
   box-shadow: -1px 1px 2px #747474;
   padding: 3px 5px;
   font-size: .8rem;
@@ -25,4 +31,47 @@ button {
 
 button img {
   width: 15px;
+}
+
+.containerOptions {
+  width: 100%;
+  max-height: 0; /* Inicialmente, establece la altura en cero */
+  overflow: hidden;
+  transition: max-height 1s ease-in-out;
+}
+
+.containerOptions.expanded {
+  height: 100vh;
+  max-height: 100vh; /* Cuando se aplica la clase 'expanded', establece la altura en 100vh */
+}
+
+.contSearch {
+  position: absolute;
+  width: 100%;
+  height: auto;
+  max-height: 85vh;
+  background: #ffffff;
+  color: #404040;
+  z-index: 100;
+  border-radius: 5px;
+  overflow-y: auto;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.contSearch.show {
+  opacity: 1;
+}
+
+.contSearch p {
+  width: 100%;
+  padding: 3px 10px;
+  background: #ffffff;
+  cursor: pointer;
+  font-size: .8rem;
+  margin: 5px 0;
+}
+
+.contSearch p:hover{
+  background: #fff;
 }

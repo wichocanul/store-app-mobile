@@ -6,12 +6,14 @@ import { IonicModule } from '@ionic/angular';
 
 
 import { CategoryPage } from './category-main/category.page';
+import { ComponentsModule } from '../../components/components.module';
 
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
-    IonicModule
+    IonicModule,
+    ComponentsModule
   ],
   declarations: [CategoryPage]
 })

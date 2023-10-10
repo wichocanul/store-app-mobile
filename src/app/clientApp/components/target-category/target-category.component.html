@@ -1,0 +1,11 @@
+<div class="target">
+  <div class="imgProduct">
+    <img src="assets/img/products/iphone.webp" alt="">
+  </div>
+  <div class="dataProduct">
+    <p class="title">{{title}}</p>
+    <p class="underlined">{{ price }}</p>
+    <h5>$ {{ finalPrice }} <span [ngClass]="{'disabled': statusPriceOff}">{{ priceOff }}% OFF</span></h5>
+    <p class="shipment">{{shipmentStatus}}</p>
+  </div>
+</div>

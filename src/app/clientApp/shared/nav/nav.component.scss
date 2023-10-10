@@ -81,12 +81,13 @@ hr {
 // ================================================
 
 nav {
+  position: relative;
   display: flex;
   width: 100%;
   padding: 5px 10px;
   background: var(--color-primary);
   justify-content: space-between;
-  align-items: center;
+  align-items: flex-start;
 }
 
 ion-menu-button {

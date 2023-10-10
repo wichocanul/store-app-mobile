@@ -23,4 +23,11 @@ export class ProductsService {
 
     return this.http.get<ProductResponse>( url, { headers });
   }
+
+  searchArticle(word: string): Observable<ProductResponse> {
+    let url = ``;
+    word == 'todo' ? url = `${this.baseUrl}/products/search` : url = `${this.baseUrl}/products/search?search_term=${word}`;
+
+    return this.http.get<ProductResponse>( url );
+  }
 }

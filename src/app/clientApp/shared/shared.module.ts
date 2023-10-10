@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NavComponent } from './nav/nav.component';
 import { IonicModule } from '@ionic/angular';
 import { ComponentsModule } from '../components/components.module';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -13,7 +14,8 @@ import { ComponentsModule } from '../components/components.module';
   imports: [
     CommonModule,
     IonicModule,
-    ComponentsModule
+    ComponentsModule,
+    RouterModule
   ],
   exports: [
     NavComponent
